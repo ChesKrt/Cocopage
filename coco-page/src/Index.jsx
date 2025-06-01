@@ -1,20 +1,76 @@
-import { useNavigate } from "react-router-dom";
+import './Index.css'
+import Slider from 'react-slick'
+import 'slick-carousel/slick/slick.css'
+import 'slick-carousel/slick/slick-theme.css'
+import reviews from './reviewData'
 
-function Index() {
 
-    const navigate = useNavigate()
-
-    const toSecondPage = () => {navigate('/SecondPage')}
-
+function ReviewsSection() {
   return (
-    <div>
-      <h1>Bienvenido a Mi Página de Inicio</h1>
-      <p>Contenido personalizado aquí.</p>
-      <button onClick={toSecondPage}>
-        Ir a la segunda pagina
-      </button>
+    <div className="reviews-section">
+      <h2>Reseñas</h2>
+      {reviews.map((review) => (
+        <div key={review.id} className="review">
+          <img src={review.avatar} alt={review.name} className="avatar" />
+          <div className="review-content">
+            <strong>{review.name}</strong>
+            <p>{review.comment}</p>
+          </div>
+        </div>
+      ))}
     </div>
-  );
+  )
 }
 
-export default Index;
+function Index() {
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  }
+
+  return (
+    <div className="app">
+      <header className="header">
+        <div className="left-section">
+          <img src="/logo.png" alt="Logo" className="logo" />
+          <a
+            href="https://play.google.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="google-play-button"
+          >
+            Descargar en Google Play
+          </a>
+        </div>
+
+        <div className="right-section">
+          <button className="donate-button">Donar</button>
+        </div>
+      </header>
+
+      <main className="carousel-container">
+        <Slider {...settings}>
+          <div>
+            <img src="/img1.png" alt="Imagen 1" className="carousel-image" />
+          </div>
+          <div>
+            <img src="/img2.png" alt="Imagen 2" className="carousel-image" />
+          </div>
+          <div>
+            <img src="/img3.png" alt="Imagen 3" className="carousel-image" />
+          </div>
+        </Slider>
+      </main>
+
+      <ReviewsSection />
+
+    </div>
+  )
+}
+
+export default Index

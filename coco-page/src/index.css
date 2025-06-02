@@ -9,13 +9,19 @@ body {
 }
 
 .header {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
   background-color: #ffffff;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
+  z-index: 10;
+  padding: 1rem 2rem;
+}
+
+.header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .left-section {
@@ -51,7 +57,7 @@ body {
 }
 
 .carousel-container {
-  margin-top: 3rem;
+  margin-top: 2rem;
   width: 80%;
   margin-left: auto;
   margin-right: auto;
@@ -64,17 +70,22 @@ body {
   border-radius: 10px;
 }
 
+/* Reseñas */
 .reviews-section {
   padding: 2rem;
   background-color: #fff;
   margin-top: 2rem;
   border-top: 1px solid #ccc;
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .review {
   display: flex;
   align-items: flex-start;
   margin-bottom: 1.5rem;
+  text-align: left;
 }
 
 .avatar {
@@ -85,7 +96,71 @@ body {
   margin-right: 1rem;
 }
 
-.review-content p {
-  margin: 0.25rem 0 0;
+.review-content {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
+.review-name {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+}
+
+.review-comment {
+  margin: 0;
+}
+
+/* Versión responsive para móviles */
+@media (max-width: 768px) {
+  .header-row {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+
+  .left-section {
+    flex-shrink: 1;
+    flex-grow: 1;
+  }
+
+  .right-section {
+    justify-content: flex-end;
+  }
+
+  .google-play-button, .donate-button {
+    font-size: 0.9rem;
+    padding: 0.5rem 0.8rem;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .carousel-container {
+    width: 95%;
+    margin-top: 5rem;
+  }
+
+  .carousel-image {
+    height: 200px;
+    border-radius: 8px;
+  }
+
+  .reviews-section {
+    width: 95%;
+    padding: 1rem;
+  }
+
+  .avatar {
+    width: 40px;
+    height: 40px;
+  }
+
+  .review-name {
+    font-size: 0.95rem;
+  }
+
+  .review-comment {
+    font-size: 0.9rem;
+  }
+}

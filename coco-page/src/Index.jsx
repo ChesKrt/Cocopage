@@ -13,8 +13,8 @@ function ReviewsSection() {
         <div key={review.id} className="review">
           <img src={review.avatar} alt={review.name} className="avatar" />
           <div className="review-content">
-            <strong>{review.name}</strong>
-            <p>{review.comment}</p>
+            <div className="review-name">{review.name}</div>
+            <div className="review-comment">{review.comment}</div>
           </div>
         </div>
       ))}
@@ -36,22 +36,24 @@ function Index() {
   return (
     <div className="app">
       <header className="header">
-        <div className="left-section">
-          <img src="/logo.png" alt="Logo" className="logo" />
-          <a
-            href="https://play.google.com"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="google-play-button"
-          >
-            Descargar en Google Play
-          </a>
-        </div>
+  <div className="header-row">
+    <div className="left-section">
+      <img src="/logo.png" alt="Logo" className="logo" />
+      <a
+        href="https://play.google.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="google-play-button"
+      >
+        Descargar
+      </a>
+    </div>
+    <div className="right-section">
+      <button className="donate-button">Donar</button>
+    </div>
+  </div>
+</header>
 
-        <div className="right-section">
-          <button className="donate-button">Donar</button>
-        </div>
-      </header>
 
       <main className="carousel-container">
         <Slider {...settings}>

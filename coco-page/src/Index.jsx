@@ -58,10 +58,10 @@ function Index() {
       <main className="carousel-container">
         <Slider {...settings}>
           <div>
-            <img src="/img1.png" alt="Imagen 1" className="carousel-image" />
+            <img src="/img1.jpg" alt="Imagen 1" className="carousel-image" />
           </div>
           <div>
-            <img src="/img2.png" alt="Imagen 2" className="carousel-image" />
+            <img src="/img2.jpg" alt="Imagen 2" className="carousel-image" />
           </div>
           <div>
             <img src="/img3.png" alt="Imagen 3" className="carousel-image" />

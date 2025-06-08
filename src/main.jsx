@@ -1,7 +1,7 @@
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
 import {BrowserRouter, Routes, Route} from 'react-router-dom'
-import './index.css'
+import './Index.css'
 import App from './App.jsx'
 import Index from './Index.jsx'
 import SecondPage from './SecondPage.jsx'

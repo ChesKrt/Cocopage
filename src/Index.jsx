@@ -40,9 +40,8 @@ function Index() {
     <div className="left-section">
       <img src="/logo.png" alt="Logo" className="logo" />
       <a
-        href="https://play.google.com"
-        target="_blank"
-        rel="noopener noreferrer"
+        href="/Coco.apk"
+        download
         className="google-play-button"
       >
         Descargar
